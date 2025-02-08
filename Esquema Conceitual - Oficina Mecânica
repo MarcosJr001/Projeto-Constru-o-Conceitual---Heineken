@@ -1,0 +1,134 @@
+📌 Esquema Conceitual - Oficina Mecânica
+
+📖 Descrição do Projeto
+
+Este projeto tem como objetivo modelar um sistema de controle e gerenciamento de execução de ordens de serviço em uma oficina mecânica. O sistema permite:
+
+✅ Registro de clientes e seus veículos.
+✅ Emissão e controle de ordens de serviço (OS).
+✅ Designação de equipes de mecânicos para cada veículo.
+✅ Cálculo automático de custos com base em mão de obra e peças utilizadas.
+✅ Acompanhamento do status da execução dos serviços.
+
+🔗 Entidades e Relacionamentos
+
+1. Cliente
+
+idCliente (PK) - INT
+
+Nome - VARCHAR(100)
+
+CPF/CNPJ - VARCHAR(20)
+
+Telefone - VARCHAR(15)
+
+Endereço - VARCHAR(255)
+
+E-mail - VARCHAR(100)
+
+2. Veículo
+
+idVeiculo (PK) - INT
+
+Placa (Única) - VARCHAR(10)
+
+Modelo - VARCHAR(50)
+
+Marca - VARCHAR(50)
+
+Ano - INT
+
+Cliente_idCliente (FK) - INT
+
+3. Ordem de Serviço (OS)
+
+idOS (PK) - INT
+
+Data de Emissão - DATE
+
+Data Prevista de Conclusão - DATE
+
+Valor Total - DECIMAL(10,2)
+
+Status - ENUM('Aberta', 'Em andamento', 'Concluída', 'Cancelada')
+
+Veiculo_idVeiculo (FK) - INT
+
+4. Serviço
+
+idServico (PK) - INT
+
+Descrição - TEXT
+
+Tempo Estimado (Horas) - DECIMAL(5,2)
+
+Custo Mão de Obra - DECIMAL(10,2)
+
+5. Peça
+
+idPeca (PK) - INT
+
+Nome - VARCHAR(100)
+
+Descrição - TEXT
+
+Preço - DECIMAL(10,2)
+
+Estoque - INT
+
+6. Mecânico
+
+idMecanico (PK) - INT
+
+Nome - VARCHAR(100)
+
+Endereço - VARCHAR(255)
+
+Especialidade - VARCHAR(100)
+
+7. Equipe de Mecânicos
+
+idEquipe (PK) - INT
+
+Nome da Equipe - VARCHAR(100)
+
+8. Relação: Equipe-Mecânico
+
+idEquipe (FK) - INT
+
+idMecanico (FK) - INT
+
+9. Relação: OS-Equipe
+
+idOS (FK) - INT
+
+idEquipe (FK) - INT
+
+10. Relação: OS-Serviço
+
+idOS (FK) - INT
+
+idServico (FK) - INT
+
+Quantidade - INT
+
+11. Relação: OS-Peça
+
+idOS (FK) - INT
+
+idPeca (FK) - INT
+
+Quantidade - INT
+
+📌 README do Repositório GitHub
+
+Este documento será adicionado ao README do repositório GitHub para fornecer uma explicação detalhada do modelo conceitual criado. Se houver ambiguidades ou necessidades de refinamento, elas serão descritas no README para futuras melhorias.
+
+🎯 Benefícios do Modelo
+
+✅ Organização Clara: Separa clientes, veículos, serviços, peças e ordens de serviço.
+✅ Flexibilidade: Permite vários mecânicos trabalharem na mesma OS.
+✅ Controle Financeiro: Cálculo automático do custo total.
+✅ Gerenciamento de Estoque: Peças usadas são descontadas automaticamente.
+
+Se precisar de ajustes ou melhorias, estarei à disposição! 🚀
