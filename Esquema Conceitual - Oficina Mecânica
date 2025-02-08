@@ -120,10 +120,6 @@ idPeca (FK) - INT
 
 Quantidade - INT
 
-📌 README do Repositório GitHub
-
-Este documento será adicionado ao README do repositório GitHub para fornecer uma explicação detalhada do modelo conceitual criado. Se houver ambiguidades ou necessidades de refinamento, elas serão descritas no README para futuras melhorias.
-
 🎯 Benefícios do Modelo
 
 ✅ Organização Clara: Separa clientes, veículos, serviços, peças e ordens de serviço.
